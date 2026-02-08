@@ -44,7 +44,7 @@ I am a working software professional with hands-on experience in **Microsoft Dyn
 ---
 
 ## 🤝 Connect With Me
-- 💼 GitHub: [https://github.com/your-username](https://github.com/Shiv-Bob)
+- 💼 GitHub: [https://github.com/Shiv-Bob](https://github.com/Shiv-Bob)
 
 ---
 
