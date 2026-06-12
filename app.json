@@ -1,0 +1,32 @@
+{
+  "id": "acc32b5b-6ada-4b8d-9c35-40f91bd4d122",
+  "name": "Business-Central-Learning-2026",
+  "publisher": "Shivam Bobde",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "28.0.0.0",
+  "application": "28.0.0.0",
+  "idRanges": [
+    {
+      "from": 50001,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "17.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
