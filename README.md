@@ -33,4 +33,3 @@ Src/
 - API Integrations
 - AL Best Practices
 - Source Control with Git
-- 
