@@ -4,7 +4,7 @@ report 50001 "Customer List - Loyalty"
     Caption = 'Customer List by Loyalty Tier';
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
-    RDLCLayout = 'CustomerListLoyalty.rdlc';
+    RDLCLayout = 'Src/05-Reports/CustomerListLoyalty.rdlc';
 
     dataset
     {
