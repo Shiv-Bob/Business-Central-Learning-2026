@@ -1,7 +1,7 @@
 table 50001 "Customer Tag"
 {
-    DataClassification = CustomerContent;
     Caption = 'Customer Tag';
+    DataClassification = CustomerContent;
 
     fields
     {
