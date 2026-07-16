@@ -4,10 +4,9 @@ codeunit 50005 "External API Client Demo"
     var
         HttpClient: HttpClient;
         HttpResponse: HttpResponseMessage;
-        ResponseText: Text;
         JsonResponse: JsonObject;
         JToken: JsonToken;
-        RequestUrl: Text;
+        RequestUrl, ResponseText : Text;
     begin
         RequestUrl := StrSubstNo('https://api.exchangerate.example/latest?base=%1', CurrencyCode);
 
