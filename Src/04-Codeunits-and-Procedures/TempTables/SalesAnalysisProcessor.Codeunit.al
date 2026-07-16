@@ -8,13 +8,12 @@ codeunit 50020 "Sales Analysis Processor"
     // 4. Sorting and filtering temp data
     // ─────────────────────────────────────────────────────────────
 
-    procedure PopulateAnalysisBuffer(
-        var SalesAnalysisBufferRec: Record "Sales Analysis Buffer";
+    procedure PopulateAnalysisBuffer(var SalesAnalysisBufferRec: Record "Sales Analysis Buffer";
         FromDate: Date; ToDate: Date)
     var
-        SalesHeaderRec: Record "Sales Header";
-        SalesLineRec: Record "Sales Line";
         CustomerRec: Record Customer;
+        SalesLineRec: Record "Sales Line";
+        SalesHeaderRec: Record "Sales Header";
     begin
         // ─────────────────────────────────────────────────────────
         // Always clear the temp table before populating.
@@ -41,8 +40,7 @@ codeunit 50020 "Sales Analysis Processor"
             // then storing the result in the temp table —
             // rather than re-querying lines every time we need them.
             // ─────────────────────────────────────────────────────
-            SalesLineRec.SetRange("Document Type",
-                SalesHeaderRec."Document Type");
+            SalesLineRec.SetRange("Document Type", SalesHeaderRec."Document Type");
             SalesLineRec.SetRange("Document No.", SalesHeaderRec."No.");
             SalesLineRec.SetLoadFields(Amount, "Line Discount Amount");
             SalesLineRec.CalcSums(Amount, "Line Discount Amount");
@@ -56,17 +54,14 @@ codeunit 50020 "Sales Analysis Processor"
             // table Insert, but goes to memory, not the database.
             // ─────────────────────────────────────────────────────
             SalesAnalysisBufferRec.Init();
-            SalesAnalysisBufferRec."Customer No." :=
-                SalesHeaderRec."Sell-to Customer No.";
+            SalesAnalysisBufferRec."Customer No." := SalesHeaderRec."Sell-to Customer No.";
             SalesAnalysisBufferRec."Customer Name" := CustomerRec.Name;
             SalesAnalysisBufferRec."Document No." := SalesHeaderRec."No.";
             SalesAnalysisBufferRec."Posting Date" := SalesHeaderRec."Order Date";
             SalesAnalysisBufferRec."Total Amount" := SalesLineRec.Amount;
-            SalesAnalysisBufferRec."Discount Amount" :=
-                SalesLineRec."Line Discount Amount";
+            SalesAnalysisBufferRec."Discount Amount" := SalesLineRec."Line Discount Amount";
             SalesAnalysisBufferRec."Line Count" := SalesLineRec.Count();
-            SalesAnalysisBufferRec."Customer Group" :=
-                CustomerRec."Customer Disc. Group";
+            SalesAnalysisBufferRec."Customer Group" := CustomerRec."Customer Disc. Group";
             SalesAnalysisBufferRec.Insert();
 
         until SalesHeaderRec.Next() = 0;
@@ -135,13 +130,11 @@ codeunit 50020 "Sales Analysis Processor"
         // the in-memory copy. Original database is untouched.
         // ─────────────────────────────────────────────────────────
         SalesAnalysisBufferRec.Reset();
-        SalesAnalysisBufferRec.SetFilter(
-            "Discount Amount", '>%1', DiscountThreshold);
+        SalesAnalysisBufferRec.SetFilter("Discount Amount", '>%1', DiscountThreshold);
 
         if SalesAnalysisBufferRec.FindSet(true) then
             repeat
-                SalesAnalysisBufferRec."Customer Name" :=
-                    '⚠ ' + SalesAnalysisBufferRec."Customer Name";
+                SalesAnalysisBufferRec."Customer Name" := '⚠ ' + SalesAnalysisBufferRec."Customer Name";
                 SalesAnalysisBufferRec.Modify();
             until SalesAnalysisBufferRec.Next() = 0;
 
