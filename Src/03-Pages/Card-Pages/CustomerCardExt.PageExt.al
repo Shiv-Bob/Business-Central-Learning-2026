@@ -26,6 +26,7 @@ pageextension 50001 "Customer Card Loyalty Ext" extends "Customer Card"
                 ApplicationArea = All;
                 Caption = 'Add 100 Loyalty Points';
                 Image = AddAction;
+                ToolTip = 'Adds 100 loyalty points to the customer record.';
 
                 trigger OnAction()
                 begin
