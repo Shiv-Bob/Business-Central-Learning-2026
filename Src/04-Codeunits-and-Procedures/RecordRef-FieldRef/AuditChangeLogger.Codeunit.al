@@ -12,8 +12,8 @@ codeunit 50017 "Audit Change Logger"
     procedure LogChangedFields(OldRecordRef: RecordRef; NewRecordRef: RecordRef)
     var
         OldFieldRef, NewFieldRef : FieldRef;
-        FieldIndex: Integer;
         OldValue, NewValue, Output : Text;
+        FieldIndex: Integer;
     begin
         // ─────────────────────────────────────────────────────────
         // RecordRef.FieldCount — returns how many fields the table
