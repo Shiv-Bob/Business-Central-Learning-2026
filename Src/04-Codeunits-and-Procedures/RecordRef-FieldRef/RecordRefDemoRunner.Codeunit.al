@@ -4,8 +4,7 @@ codeunit 50019 "RecordRef Demo Runner"
     var
         CustomerRec: Record Customer;
         AuditChangeLogger: Codeunit "Audit Change Logger";
-        OldRecordRef: RecordRef;
-        NewRecordRef: RecordRef;
+        OldRecordRef, NewRecordRef : RecordRef;
     begin
         // ─────────────────────────────────────────────────────────
         // GetTable() converts a typed Record variable into a
@@ -68,8 +67,7 @@ codeunit 50019 "RecordRef Demo Runner"
         CustomerRec: Record Customer;
         GenericRecordHelper: Codeunit "Generic Record Helper";
         AuditChangeLogger: Codeunit "Audit Change Logger";
-        SourceRecordRef: RecordRef;
-        TargetRecordRef: RecordRef;
+        SourceRecordRef, TargetRecordRef : RecordRef;
         FieldsToCopy: List of [Integer];
     begin
         // Copy specific fields from one Customer record to another
