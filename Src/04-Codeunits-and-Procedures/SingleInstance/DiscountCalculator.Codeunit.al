@@ -41,23 +41,18 @@ codeunit 50008 "Discount Calculator"
 
         SalesLineRec.SetRange("Document Type", SalesLineRec."Document Type"::Order);
         SalesLineRec.SetRange("Document No.", SalesHeaderNo);
-        SalesLineRec.SetLoadFields(
-            "No.", "Sell-to Customer No.", "Unit Price", Quantity);
+        SalesLineRec.SetLoadFields("No.", "Sell-to Customer No.", "Unit Price", Quantity);
 
         if SalesLineRec.FindSet() then
             repeat
                 LineCount += 1;
-                TotalAmount += CalculateDiscountedAmount(
-                    SalesLineRec."Sell-to Customer No.",
-                    SalesLineRec."Unit Price",
-                    SalesLineRec.Quantity);
+                TotalAmount += CalculateDiscountedAmount(SalesLineRec."Sell-to Customer No.",
+                    SalesLineRec."Unit Price", SalesLineRec.Quantity);
             until SalesLineRec.Next() = 0;
 
         Message(
             'Processed %1 lines.\Total discounted amount: %2\DB reads for discounts: %3',
-            LineCount,
-            TotalAmount,
-            DiscountRulesCache.GetDatabaseReadCount());
+            LineCount, TotalAmount, DiscountRulesCache.GetDatabaseReadCount());
         // ^ Notice: DB reads = 1 (PreloadAllGroups),
         //   regardless of how many lines the order has.
     end;
