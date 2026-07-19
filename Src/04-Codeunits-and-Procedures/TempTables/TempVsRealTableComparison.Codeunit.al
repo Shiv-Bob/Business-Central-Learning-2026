@@ -59,24 +59,18 @@ codeunit 50022 "Temp Vs Real Table Comparison"
         Output: Text;
     begin
         // ── ONE database pass to populate the temp table ──
-        SalesAnalysisProcessor.PopulateAnalysisBuffer(
-            SalesAnalysisBufferRec,
-            CalcDate('<-1Y>', Today()),
-            Today());
+        SalesAnalysisProcessor.PopulateAnalysisBuffer(SalesAnalysisBufferRec, CalcDate('<-1Y>', Today()), Today());
 
         // ── ALL subsequent processing hits memory, not database ──
 
         // Get group total — in memory
-        GroupTotal := SalesAnalysisProcessor.GetTotalByCustomerGroup(
-            SalesAnalysisBufferRec, CustomerGroup);
+        GroupTotal := SalesAnalysisProcessor.GetTotalByCustomerGroup(SalesAnalysisBufferRec, CustomerGroup);
 
         // Get top customers — in memory, different sort
-        Output := SalesAnalysisProcessor.GetTopCustomersByAmount(
-            SalesAnalysisBufferRec, 3);
+        Output := SalesAnalysisProcessor.GetTopCustomersByAmount(SalesAnalysisBufferRec, 3);
 
         // Apply flags — in memory
-        SalesAnalysisProcessor.UpdateBufferWithDiscountFlag(
-            SalesAnalysisBufferRec, 500);
+        SalesAnalysisProcessor.UpdateBufferWithDiscountFlag(SalesAnalysisBufferRec, 500);
 
         // One database scan. Three different operations on the same data.
         Message('Group Total: %1\\%2', GroupTotal, Output);
