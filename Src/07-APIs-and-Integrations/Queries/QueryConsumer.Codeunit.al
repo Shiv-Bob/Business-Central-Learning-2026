@@ -16,9 +16,7 @@ codeunit 50015 "Query Consumer Demo"
         while CustomerSalesSummary.Read() do
             Output += StrSubstNo(
                 '%1 (%2) → Total Sales: %3\',
-                CustomerSalesSummary.CustomerName,
-                CustomerSalesSummary.CustomerNo,
-                CustomerSalesSummary.LineAmount);
+                CustomerSalesSummary.CustomerName, CustomerSalesSummary.CustomerNo, CustomerSalesSummary.LineAmount);
 
         CustomerSalesSummary.Close();
 
