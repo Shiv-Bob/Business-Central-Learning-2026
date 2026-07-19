@@ -9,20 +9,15 @@ codeunit 50021 "Temp Table Demo Runner"
         // ─────────────────────────────────────────────────────────
         // Step 1: Populate the temp table from real sales data
         // ─────────────────────────────────────────────────────────
-        SalesAnalysisProcessor.PopulateAnalysisBuffer(
-            SalesAnalysisBufferRec,
-            CalcDate('<-1Y>', Today()),
-            Today());
+        SalesAnalysisProcessor.PopulateAnalysisBuffer(SalesAnalysisBufferRec, CalcDate('<-1Y>', Today()), Today());
 
         // ─────────────────────────────────────────────────────────
         // Step 2: Process in memory — no more DB calls needed
         // ─────────────────────────────────────────────────────────
-        SalesAnalysisProcessor.UpdateBufferWithDiscountFlag(
-            SalesAnalysisBufferRec, 500);
+        SalesAnalysisProcessor.UpdateBufferWithDiscountFlag(SalesAnalysisBufferRec, 500);
 
         // Step 3: Read results in different ways from the same data
-        Output := SalesAnalysisProcessor.GetTopCustomersByAmount(
-            SalesAnalysisBufferRec, 5);
+        Output := SalesAnalysisProcessor.GetTopCustomersByAmount(SalesAnalysisBufferRec, 5);
 
         Message(Output);
 
@@ -65,7 +60,6 @@ codeunit 50021 "Temp Table Demo Runner"
         SalesAnalysisBufferRec.Reset();
         if SalesAnalysisBufferRec.FindSet() then
             Message('By ref — Found %1 records. First: %2',
-                SalesAnalysisBufferRec.Count(),
-                SalesAnalysisBufferRec."Customer No.");
+                SalesAnalysisBufferRec.Count(), SalesAnalysisBufferRec."Customer No.");
     end;
 }
