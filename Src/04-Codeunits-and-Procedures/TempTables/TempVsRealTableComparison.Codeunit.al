@@ -16,8 +16,7 @@ codeunit 50022 "Temp Vs Real Table Comparison"
     begin
         // ── PASS 1: Calculate group total ──
         // This queries Sales Header + Sales Line from database
-        SalesHeaderRec.SetRange("Document Type",
-            SalesHeaderRec."Document Type"::Order);
+        SalesHeaderRec.SetRange("Document Type", SalesHeaderRec."Document Type"::Order);
         if SalesHeaderRec.FindSet() then
             repeat
                 if CustomerRec.Get(SalesHeaderRec."Sell-to Customer No.") then
@@ -30,8 +29,7 @@ codeunit 50022 "Temp Vs Real Table Comparison"
 
         // ── PASS 2: Find top customer ──
         // Queries the SAME data from database AGAIN for a different purpose
-        SalesHeaderRec.SetRange("Document Type",
-            SalesHeaderRec."Document Type"::Order);
+        SalesHeaderRec.SetRange("Document Type", SalesHeaderRec."Document Type"::Order);
         if SalesHeaderRec.FindSet() then
             repeat
                 if CustomerRec.Get(SalesHeaderRec."Sell-to Customer No.") then
@@ -47,8 +45,7 @@ codeunit 50022 "Temp Vs Real Table Comparison"
             until SalesHeaderRec.Next() = 0;
 
         // Two full database scans for the same data — wasteful
-        Message('Group Total: %1\Top Customer: %2 ($%3)',
-            GroupTotal, TopCustomer, TopAmount);
+        Message('Group Total: %1\Top Customer: %2 ($%3)', GroupTotal, TopCustomer, TopAmount);
     end;
 
     procedure ProcessWithTempTable(CustomerGroup: Code[20])
