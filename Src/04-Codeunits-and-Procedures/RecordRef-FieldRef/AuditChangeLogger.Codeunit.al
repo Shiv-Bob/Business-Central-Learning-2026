@@ -45,11 +45,7 @@ codeunit 50017 "Audit Change Logger"
             NewValue := Format(NewFieldRef.Value);
 
             if OldValue <> NewValue then
-                Output += StrSubstNo(
-                    '  Field "%1": "%2" → "%3"\',
-                    OldFieldRef.Caption,
-                    OldValue,
-                    NewValue);
+                Output += StrSubstNo('Field "%1": "%2" → "%3"\', OldFieldRef.Caption, OldValue, NewValue);
         end;
 
         Message(Output);
