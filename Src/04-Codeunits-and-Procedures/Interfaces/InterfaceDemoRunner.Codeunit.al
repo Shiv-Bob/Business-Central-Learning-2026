@@ -11,8 +11,7 @@ codeunit 50014 "Interface Demo Runner"
         Quantity := 60;
 
         Output := StrSubstNo(
-            '=== Comparing Discount Strategies ===\Order: %1 units, $%2 total\\',
-            Quantity, OriginalAmount);
+            '=== Comparing Discount Strategies ===\Order: %1 units, $%2 total\\', Quantity, OriginalAmount);
 
         IDiscountStrategy := DiscountStrategyFactory.GetStrategy("Discount Strategy Type"::Percentage);
         Output += StrSubstNo('%1 → Discount: $%2\',
