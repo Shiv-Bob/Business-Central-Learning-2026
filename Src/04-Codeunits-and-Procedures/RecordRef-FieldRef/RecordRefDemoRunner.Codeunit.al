@@ -50,12 +50,9 @@ codeunit 50019 "RecordRef Demo Runner"
         // Count records in multiple tables without separate
         // Record variables for each — one generic procedure handles all
         Output := 'Record counts:\';
-        Output += StrSubstNo('  Customers: %1\',
-            GenericRecordHelper.CountRecordsInTable(18));
-        Output += StrSubstNo('  Vendors: %1\',
-            GenericRecordHelper.CountRecordsInTable(23));
-        Output += StrSubstNo('  Items: %1\',
-            GenericRecordHelper.CountRecordsInTable(27));
+        Output += StrSubstNo('  Customers: %1\', GenericRecordHelper.CountRecordsInTable(18));
+        Output += StrSubstNo('  Vendors: %1\', GenericRecordHelper.CountRecordsInTable(23));
+        Output += StrSubstNo('  Items: %1\', GenericRecordHelper.CountRecordsInTable(27));
 
         Message(Output);
     end;
