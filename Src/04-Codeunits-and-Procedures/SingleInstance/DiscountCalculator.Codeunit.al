@@ -18,11 +18,9 @@ codeunit 50008 "Discount Calculator"
             exit(UnitPrice * Quantity);
 
         // Corrected field name: "Customer Disc. Group" not "Customer Price Group"
-        DiscountPercent := DiscountRulesCache.GetDiscountPercent(
-            CustomerRec."Customer Disc. Group");
+        DiscountPercent := DiscountRulesCache.GetDiscountPercent(CustomerRec."Customer Disc. Group");
 
-        DiscountedAmount := (UnitPrice * Quantity) *
-            (1 - (DiscountPercent / 100));
+        DiscountedAmount := (UnitPrice * Quantity) * (1 - (DiscountPercent / 100));
 
         exit(DiscountedAmount);
     end;
