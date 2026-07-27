@@ -79,8 +79,7 @@ codeunit 50019 "RecordRef Demo Runner"
         FieldsToCopy.Add(2);
         FieldsToCopy.Add(5);
 
-        GenericRecordHelper.CopyFieldsBetweenRecords(
-            SourceRecordRef, TargetRecordRef, FieldsToCopy);
+        GenericRecordHelper.CopyFieldsBetweenRecords(SourceRecordRef, TargetRecordRef, FieldsToCopy);
 
         Message('Fields copied. Name: %1, Address: %2',
             AuditChangeLogger.GetFieldValueAsText(TargetRecordRef, 2),
