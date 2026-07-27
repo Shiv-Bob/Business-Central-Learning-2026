@@ -20,10 +20,8 @@ codeunit 50019 "RecordRef Demo Runner"
 
         // Simulate a change
         NewRecordRef.GetTable(CustomerRec);
-        AuditChangeLogger.SetFieldValue(
-            NewRecordRef, CustomerRec.FieldNo(Name), 'Updated Customer Name');
-        AuditChangeLogger.SetFieldValue(
-            NewRecordRef, CustomerRec.FieldNo("Credit Limit (LCY)"), 99999);
+        AuditChangeLogger.SetFieldValue(NewRecordRef, CustomerRec.FieldNo(Name), 'Updated Customer Name');
+        AuditChangeLogger.SetFieldValue(NewRecordRef, CustomerRec.FieldNo("Credit Limit (LCY)"), 99999);
 
         // Compare old vs new — works for ANY table
         AuditChangeLogger.LogChangedFields(OldRecordRef, NewRecordRef);
