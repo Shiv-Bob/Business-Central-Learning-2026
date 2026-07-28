@@ -41,7 +41,6 @@ codeunit 50014 "Interface Demo Runner"
 
         FinalDiscount := IDiscountStrategy.CalculateDiscount(500, 25);
 
-        Message('Using "%1" → Final discount: $%2',
-            IDiscountStrategy.GetStrategyName(), FinalDiscount);
+        Message('Using "%1" → Final discount: $%2', IDiscountStrategy.GetStrategyName(), FinalDiscount);
     end;
 }
