@@ -30,18 +30,11 @@ codeunit 50018 "Generic Record Helper"
         // name and its current data type for any table at runtime
         RecordRefVar.Open(TableNo);
 
-        Output := StrSubstNo(
-            'Table %1 "%2" has %3 fields:\',
-            TableNo,
-            RecordRefVar.Caption,
-            RecordRefVar.FieldCount);
+        Output := StrSubstNo('Table %1 "%2" has %3 fields:\', TableNo, RecordRefVar.Caption, RecordRefVar.FieldCount);
 
         for FieldIndex := 1 to RecordRefVar.FieldCount do begin
             FieldRefVar := RecordRefVar.FieldIndex(FieldIndex);
-            Output += StrSubstNo('  [%1] %2 (%3)\',
-                FieldRefVar.Number,
-                FieldRefVar.Caption,
-                FieldRefVar.Type);
+            Output += StrSubstNo('  [%1] %2 (%3)\', FieldRefVar.Number, FieldRefVar.Caption, FieldRefVar.Type);
         end;
 
         Message(Output);
