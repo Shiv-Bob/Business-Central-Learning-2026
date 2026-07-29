@@ -23,8 +23,7 @@ codeunit 50017 "Audit Change Logger"
         if OldRecordRef.Number <> NewRecordRef.Number then
             Error('Both RecordRefs must point to the same table.');
 
-        Output := StrSubstNo('=== Changes detected in Table: %1 ===\',
-            OldRecordRef.Caption);
+        Output := StrSubstNo('=== Changes detected in Table: %1 ===\', OldRecordRef.Caption);
 
         for FieldIndex := 1 to OldRecordRef.FieldCount do begin
             // ─────────────────────────────────────────────────────
