@@ -2,7 +2,7 @@ codeunit 50005 "External API Client Demo"
 {
     procedure GetExchangeRate(CurrencyCode: Text): Decimal
     var
-        HttpClient: HttpClient;
+        Client: HttpClient;
         HttpResponse: HttpResponseMessage;
         JsonResponse: JsonObject;
         JToken: JsonToken;
@@ -10,7 +10,7 @@ codeunit 50005 "External API Client Demo"
     begin
         RequestUrl := StrSubstNo('https://api.exchangerate.example/latest?base=%1', CurrencyCode);
 
-        if not HttpClient.Get(RequestUrl, HttpResponse) then
+        if not Client.Get(RequestUrl, HttpResponse) then
             Error('Failed to call exchange rate API');
 
         if not HttpResponse.IsSuccessStatusCode() then
