@@ -58,8 +58,7 @@ codeunit 50009 "SingleInstance Proof Demo"
     begin
         // Load via Cache1
         DiscountRulesCache1.GetDiscountPercent('RETAIL');
-        Message('Loaded via Cache1 → DB reads via Cache2: %1\(Should be 1 — same instance!)',
-            DiscountRulesCache2.GetDatabaseReadCount());
+        Message('Loaded via Cache1 → DB reads via Cache2: %1\(Should be 1 — same instance!)', DiscountRulesCache2.GetDatabaseReadCount());
         // Both variables point to the SAME instance.
         // DB read via Cache1 is visible via Cache2.
     end;
