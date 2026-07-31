@@ -35,8 +35,7 @@ codeunit 50009 "SingleInstance Proof Demo"
     begin
         // First call — reads DB, caches result
         DiscountRulesCache.GetDiscountPercent('RETAIL');
-        Message('After first call → DB reads: %1 (loaded from DB)',
-            DiscountRulesCache.GetDatabaseReadCount());
+        Message('After first call → DB reads: %1 (loaded from DB)', DiscountRulesCache.GetDatabaseReadCount());
 
         // Second call — served from cache
         DiscountRulesCache.GetDiscountPercent('RETAIL');
