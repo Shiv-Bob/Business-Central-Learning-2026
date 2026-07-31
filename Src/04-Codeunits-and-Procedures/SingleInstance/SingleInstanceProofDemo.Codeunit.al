@@ -39,8 +39,7 @@ codeunit 50009 "SingleInstance Proof Demo"
 
         // Second call — served from cache
         DiscountRulesCache.GetDiscountPercent('RETAIL');
-        Message('After second call → DB reads: %1 (from cache, no new DB read)',
-            DiscountRulesCache.GetDatabaseReadCount());
+        Message('After second call → DB reads: %1 (from cache, no new DB read)', DiscountRulesCache.GetDatabaseReadCount());
 
         // Invalidate — wipes the cached value
         DiscountRulesCache.InvalidateCacheForGroup('RETAIL');
