@@ -47,8 +47,7 @@ codeunit 50009 "SingleInstance Proof Demo"
 
         // Third call — cache is empty again, forces DB read
         DiscountRulesCache.GetDiscountPercent('RETAIL');
-        Message('After invalidation + call → DB reads: %1 (re-read from DB)',
-            DiscountRulesCache.GetDatabaseReadCount());
+        Message('After invalidation + call → DB reads: %1 (re-read from DB)', DiscountRulesCache.GetDatabaseReadCount());
     end;
 
     // DEMO 3: Proves the instance is SHARED across codeunits
