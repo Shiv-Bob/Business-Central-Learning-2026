@@ -18,7 +18,6 @@ codeunit 50005 "External API Client Demo"
 
         HttpResponse.Content().ReadAs(ResponseText);
         JsonResponse.ReadFrom(ResponseText);
-
         if JsonResponse.Get('rate', JToken) then
             exit(JToken.AsValue().AsDecimal());
 
