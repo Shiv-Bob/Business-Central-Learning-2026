@@ -18,10 +18,7 @@ codeunit 50009 "SingleInstance Proof Demo"
 
         for i := 1 to 5 do begin
             DiscountRulesCache.GetDiscountPercent('RETAIL');
-            Output += StrSubstNo(
-                'Call %1 → DB reads so far: %2\',
-                i,
-                DiscountRulesCache.GetDatabaseReadCount());
+            Output += StrSubstNo('Call %1 → DB reads so far: %2\', i, DiscountRulesCache.GetDatabaseReadCount());
         end;
 
         Output += '\';
