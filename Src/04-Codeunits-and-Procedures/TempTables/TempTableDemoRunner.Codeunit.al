@@ -59,7 +59,6 @@ codeunit 50021 "Temp Table Demo Runner"
         // Has access to the same in-memory records
         SalesAnalysisBufferRec.Reset();
         if SalesAnalysisBufferRec.FindSet() then
-            Message('By ref — Found %1 records. First: %2',
-                SalesAnalysisBufferRec.Count(), SalesAnalysisBufferRec."Customer No.");
+            Message('By ref — Found %1 records. First: %2', SalesAnalysisBufferRec.Count(), SalesAnalysisBufferRec."Customer No.");
     end;
 }
