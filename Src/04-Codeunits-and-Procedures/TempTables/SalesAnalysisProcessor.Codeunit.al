@@ -25,8 +25,7 @@ codeunit 50020 "Sales Analysis Processor"
 
         SalesHeaderRec.SetRange("Document Type", SalesHeaderRec."Document Type"::Order);
         SalesHeaderRec.SetRange("Order Date", FromDate, ToDate);
-        SalesHeaderRec.SetLoadFields(
-            "No.", "Sell-to Customer No.", "Order Date");
+        SalesHeaderRec.SetLoadFields("No.", "Sell-to Customer No.", "Order Date");
 
         if not SalesHeaderRec.FindSet() then
             exit;
