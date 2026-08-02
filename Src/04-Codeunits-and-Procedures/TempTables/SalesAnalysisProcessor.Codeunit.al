@@ -8,8 +8,7 @@ codeunit 50020 "Sales Analysis Processor"
     // 4. Sorting and filtering temp data
     // ─────────────────────────────────────────────────────────────
 
-    procedure PopulateAnalysisBuffer(var SalesAnalysisBufferRec: Record "Sales Analysis Buffer";
-        FromDate: Date; ToDate: Date)
+    procedure PopulateAnalysisBuffer(var SalesAnalysisBufferRec: Record "Sales Analysis Buffer"; FromDate: Date; ToDate: Date)
     var
         CustomerRec: Record Customer;
         SalesLineRec: Record "Sales Line";
