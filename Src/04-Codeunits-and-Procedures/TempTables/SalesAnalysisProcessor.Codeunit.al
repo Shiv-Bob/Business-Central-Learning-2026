@@ -92,9 +92,7 @@ codeunit 50020 "Sales Analysis Processor"
         exit(Output);
     end;
 
-    procedure GetTotalByCustomerGroup(
-        var SalesAnalysisBufferRec: Record "Sales Analysis Buffer";
-        CustomerGroup: Code[20]): Decimal
+    procedure GetTotalByCustomerGroup(var SalesAnalysisBufferRec: Record "Sales Analysis Buffer"; CustomerGroup: Code[20]): Decimal
     var
         GroupTotal: Decimal;
     begin
