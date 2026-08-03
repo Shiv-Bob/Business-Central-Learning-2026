@@ -111,9 +111,7 @@ codeunit 50020 "Sales Analysis Processor"
         exit(GroupTotal);
     end;
 
-    procedure UpdateBufferWithDiscountFlag(
-        var SalesAnalysisBufferRec: Record "Sales Analysis Buffer";
-        DiscountThreshold: Decimal)
+    procedure UpdateBufferWithDiscountFlag(var SalesAnalysisBufferRec: Record "Sales Analysis Buffer"; DiscountThreshold: Decimal)
     var
         HighDiscountBufferRec: Record "Sales Analysis Buffer";
     begin
