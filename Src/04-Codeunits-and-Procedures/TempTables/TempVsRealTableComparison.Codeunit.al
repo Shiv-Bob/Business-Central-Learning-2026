@@ -8,9 +8,9 @@ codeunit 50022 "Temp Vs Real Table Comparison"
 
     procedure ProcessWithoutTempTable(CustomerGroup: Code[20])
     var
+        CustomerRec: Record Customer;
         SalesHeaderRec: Record "Sales Header";
         SalesLineRec: Record "Sales Line";
-        CustomerRec: Record Customer;
         TopCustomer: Text;
         GroupTotal, TopAmount, CustomerTotal : Decimal;
     begin
