@@ -64,9 +64,7 @@ codeunit 50020 "Sales Analysis Processor"
         until SalesHeaderRec.Next() = 0;
     end;
 
-    procedure GetTopCustomersByAmount(
-        var SalesAnalysisBufferRec: Record "Sales Analysis Buffer";
-        TopN: Integer): Text
+    procedure GetTopCustomersByAmount(var SalesAnalysisBufferRec: Record "Sales Analysis Buffer"; TopN: Integer): Text
     var
         Output: Text;
         RowCount: Integer;
