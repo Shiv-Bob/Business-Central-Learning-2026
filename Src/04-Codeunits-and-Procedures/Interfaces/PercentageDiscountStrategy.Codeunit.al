@@ -6,7 +6,7 @@ codeunit 50010 "Percentage Discount Strategy" implements "IDiscountStrategy"
     // matching signatures. The compiler enforces this.
     // ─────────────────────────────────────────────────────────────
 
-    procedure CalculateDiscount(OriginalAmount: Decimal; Quantity: Decimal): Decimal
+    internal procedure CalculateDiscount(OriginalAmount: Decimal; Quantity: Decimal): Decimal
     var
         DiscountPercent: Decimal;
     begin
@@ -14,7 +14,7 @@ codeunit 50010 "Percentage Discount Strategy" implements "IDiscountStrategy"
         exit(OriginalAmount * (DiscountPercent / 100));
     end;
 
-    procedure GetStrategyName(): Text[50]
+    internal procedure GetStrategyName(): Text[50]
     begin
         exit('Percentage Discount (10%)');
     end;
