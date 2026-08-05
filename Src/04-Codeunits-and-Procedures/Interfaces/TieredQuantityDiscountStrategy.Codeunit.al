@@ -1,6 +1,6 @@
 codeunit 50012 "TieredQuantityDiscountStrategy" implements "IDiscountStrategy"
 {
-    procedure CalculateDiscount(OriginalAmount: Decimal; Quantity: Decimal): Decimal
+    internal procedure CalculateDiscount(OriginalAmount: Decimal; Quantity: Decimal): Decimal
     var
         DiscountPercent: Decimal;
     begin
@@ -19,7 +19,7 @@ codeunit 50012 "TieredQuantityDiscountStrategy" implements "IDiscountStrategy"
         exit(OriginalAmount * (DiscountPercent / 100));
     end;
 
-    procedure GetStrategyName(): Text[50]
+    internal procedure GetStrategyName(): Text[50]
     begin
         exit('Tiered Quantity Discount (5%/12%/20%)');
     end;
