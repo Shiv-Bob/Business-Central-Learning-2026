@@ -16,7 +16,6 @@ codeunit 50001 "Basic Types Demo"
         SampleBoolean := true;
         SampleOption := SampleOption::Released;
 
-        Message('Text: %1\Integer: %2\Decimal: %3\Date: %4\Bool: %5\Option: %6',
-            SampleText, SampleInteger, SampleDecimal, SampleDate, SampleBoolean, SampleOption);
+        Message('Text: %1\Integer: %2\Decimal: %3\Date: %4\Bool: %5\Option: %6', SampleText, SampleInteger, SampleDecimal, SampleDate, SampleBoolean, SampleOption);
     end;
 }
