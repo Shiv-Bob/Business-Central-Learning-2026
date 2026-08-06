@@ -15,7 +15,7 @@ codeunit 50002 "Loops And Conditions Demo"
         Message('Total customers processed: %1', CustomerCount);
     end;
 
-    procedure CaseExample(Status: Option Open,Released,Pending)
+    internal procedure CaseExample(Status: Option Open,Released,Pending)
     var
         ResultText: Text;
     begin
