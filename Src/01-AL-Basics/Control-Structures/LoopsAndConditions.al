@@ -1,6 +1,6 @@
 codeunit 50002 "Loops And Conditions Demo"
 {
-    procedure LoopThroughCustomers()
+    internal procedure LoopThroughCustomers()
     var
         CustomerRec: Record Customer;
         CustomerCount: Integer;
