@@ -1,6 +1,6 @@
 codeunit 50001 "Basic Types Demo"
 {
-    procedure DemoVariableTypes()
+    internal procedure DemoVariableTypes()
     var
         SampleText: Text[50];
         SampleInteger: Integer;
