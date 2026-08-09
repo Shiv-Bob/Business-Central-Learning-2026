@@ -14,7 +14,7 @@ codeunit 50004 "Procedure Patterns Demo"
     end;
 
     // Pattern: Returning a Boolean + var parameter for "out" style results
-    procedure TryGetCustomerDiscount(CustomerNo: Code[20]; var DiscountPercent: Decimal): Boolean
+    internal procedure TryGetCustomerDiscount(CustomerNo: Code[20]; var DiscountPercent: Decimal): Boolean
     var
         CustomerDiscGroup: Record "Customer Discount Group";
         Customer: Record Customer;
