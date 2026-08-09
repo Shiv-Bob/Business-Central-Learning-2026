@@ -1,7 +1,7 @@
 codeunit 50004 "Procedure Patterns Demo"
 {
     // Pattern: Function with optional parameters via overload-style procedures
-    procedure CalculateDiscount(Amount: Decimal; DiscountPercent: Decimal): Decimal
+    internal procedure CalculateDiscount(Amount: Decimal; DiscountPercent: Decimal): Decimal
     begin
         exit(Amount - (Amount * DiscountPercent / 100));
     end;
