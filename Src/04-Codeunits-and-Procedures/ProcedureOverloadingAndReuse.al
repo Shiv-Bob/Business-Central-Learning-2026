@@ -6,7 +6,7 @@ codeunit 50004 "Procedure Patterns Demo"
         exit(Amount - (Amount * DiscountPercent / 100));
     end;
 
-    procedure CalculateDiscountWithMinimum(Amount: Decimal; DiscountPercent: Decimal; MinimumOrderAmount: Decimal): Decimal
+    internal procedure CalculateDiscountWithMinimum(Amount: Decimal; DiscountPercent: Decimal; MinimumOrderAmount: Decimal): Decimal
     begin
         if Amount < MinimumOrderAmount then
             exit(Amount);
