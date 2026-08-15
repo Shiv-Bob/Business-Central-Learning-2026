@@ -1,6 +1,6 @@
 codeunit 50014 "Interface Demo Runner"
 {
-    procedure RunComparisonDemo()
+    internal procedure RunComparisonDemo()
     var
         DiscountStrategyFactory: Codeunit "Discount Strategy Factory";
         IDiscountStrategy: Interface "IDiscountStrategy";
