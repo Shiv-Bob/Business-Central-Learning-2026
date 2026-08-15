@@ -66,7 +66,7 @@ codeunit 50017 "Audit Change Logger"
         exit(Format(FieldRefVar.Value));
     end;
 
-    procedure SetFieldValue(var RecordRefParam: RecordRef; FieldNo: Integer; NewValue: Variant)
+    internal procedure SetFieldValue(var RecordRefParam: RecordRef; FieldNo: Integer; NewValue: Variant)
     var
         FieldRefVar: FieldRef;
     begin
