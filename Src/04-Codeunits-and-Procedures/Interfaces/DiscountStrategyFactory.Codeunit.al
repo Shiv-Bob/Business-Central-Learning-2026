@@ -1,6 +1,6 @@
 codeunit 50013 "Discount Strategy Factory"
 {
-    procedure GetStrategy(DiscountStrategyType: Enum "Discount Strategy Type"): Interface "IDiscountStrategy"
+    internal procedure GetStrategy(DiscountStrategyType: Enum "Discount Strategy Type"): Interface "IDiscountStrategy"
     var
         PercentageDiscountStrategy: Codeunit "Percentage Discount Strategy";
         FixedAmountDiscountStrategy: Codeunit "Fixed Amount Discount Strategy";
