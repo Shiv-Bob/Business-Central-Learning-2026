@@ -24,7 +24,7 @@ codeunit 50014 "Interface Demo Runner"
         Message(Output);
     end;
 
-    procedure RunDynamicSwapDemo(UseTieredPricing: Boolean)
+    internal procedure RunDynamicSwapDemo(UseTieredPricing: Boolean)
     var
         DiscountStrategyFactory: Codeunit "Discount Strategy Factory";
         IDiscountStrategy: Interface "IDiscountStrategy";
