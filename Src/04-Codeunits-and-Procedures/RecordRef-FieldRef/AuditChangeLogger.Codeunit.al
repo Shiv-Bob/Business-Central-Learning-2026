@@ -9,7 +9,7 @@ codeunit 50017 "Audit Change Logger"
     // frameworks, import/export engines that handle multiple tables.
     // ─────────────────────────────────────────────────────────────
 
-    procedure LogChangedFields(OldRecordRef: RecordRef; NewRecordRef: RecordRef)
+    internal procedure LogChangedFields(OldRecordRef: RecordRef; NewRecordRef: RecordRef)
     var
         OldFieldRef, NewFieldRef : FieldRef;
         OldValue, NewValue, Output : Text;
