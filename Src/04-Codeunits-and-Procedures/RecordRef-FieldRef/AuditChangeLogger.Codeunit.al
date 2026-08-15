@@ -50,7 +50,7 @@ codeunit 50017 "Audit Change Logger"
         Message(Output);
     end;
 
-    procedure GetFieldValueAsText(RecordRefParam: RecordRef; FieldNo: Integer): Text
+    internal procedure GetFieldValueAsText(RecordRefParam: RecordRef; FieldNo: Integer): Text
     var
         FieldRefVar: FieldRef;
     begin
