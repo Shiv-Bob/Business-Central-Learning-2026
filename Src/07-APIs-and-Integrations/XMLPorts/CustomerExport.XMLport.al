@@ -68,6 +68,12 @@ xmlport 50001 "Customer Export CSV"
                     XmlName = 'CreditLimit';
                 }
 
+                trigger OnPreXMLItem()
+                begin
+                    // Filter out blocked customers from the export
+                    CustomerRec.SetRange(Blocked, CustomerRec.Blocked::" ");
+                end;
+
             }
         }
     }
