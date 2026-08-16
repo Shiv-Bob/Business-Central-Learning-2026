@@ -19,4 +19,8 @@ xmlport 50001 "Customer Export CSV"
     // TextEncoding: important for international characters.
     // UTF8 handles special chars (German umlauts, accented French etc.)
     TextEncoding = UTF8;
+
+    schema
+    {
+    }
 }
