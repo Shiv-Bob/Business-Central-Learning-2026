@@ -22,5 +22,17 @@ xmlport 50001 "Customer Export CSV"
 
     schema
     {
+        textelement(Root)
+        {
+            // ─────────────────────────────────────────────────────
+            // tableelement = one row per record in this table.
+            // The variable name (CustomerRec) follows your naming
+            // convention — Rec suffix for Record variables.
+            // ─────────────────────────────────────────────────────
+            tableelement(CustomerRec; Customer)
+            {
+
+            }
+        }
     }
 }
