@@ -31,6 +31,42 @@ xmlport 50001 "Customer Export CSV"
             // ─────────────────────────────────────────────────────
             tableelement(CustomerRec; Customer)
             {
+                // ─────────────────────────────────────────────────
+                // XmlName is the column header in the CSV output.
+                // fieldelement = one column per field.
+                // ─────────────────────────────────────────────────
+                fieldelement(No; CustomerRec."No.")
+                {
+                    XmlName = 'CustomerNo';
+                }
+                fieldelement(Name; CustomerRec.Name)
+                {
+                    XmlName = 'CustomerName';
+                }
+                fieldelement(Address; CustomerRec.Address)
+                {
+                    XmlName = 'Address';
+                }
+                fieldelement(City; CustomerRec.City)
+                {
+                    XmlName = 'City';
+                }
+                fieldelement(CountryCode; CustomerRec."Country/Region Code")
+                {
+                    XmlName = 'CountryCode';
+                }
+                fieldelement(PhoneNo; CustomerRec."Phone No.")
+                {
+                    XmlName = 'PhoneNo';
+                }
+                fieldelement(Email; CustomerRec."E-Mail")
+                {
+                    XmlName = 'Email';
+                }
+                fieldelement(CreditLimit; CustomerRec."Credit Limit (LCY)")
+                {
+                    XmlName = 'CreditLimit';
+                }
 
             }
         }
